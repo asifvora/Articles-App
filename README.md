@@ -6,7 +6,7 @@ React native demo Articles-App.
 
 | SingUp Screen | SingIn Screen | Listing Screen | Detail Screen |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| <img src="./screenshot/movie_list.png" height="400" alt="Screenshot"/>  | <img src="./screenshot/movie_detail.png" height="400" alt="Screenshot"/>  | <img src="./screenshot/movie_detail.png" height="400" alt="Screenshot"/>  | <img src="./screenshot/movie_detail.png" height="400" alt="Screenshot"/>  |
+| <img src="./screenshot/SingUp.png" height="400" alt="Screenshot"/>  | <img src="./screenshot/SingIn.png" height="400" alt="Screenshot"/>  | <img src="./screenshot/Listing.png" height="400" alt="Screenshot"/>  | <img src="./screenshot/Detail.png" height="400" alt="Screenshot"/>  |
 
 ## Getting Started
 
