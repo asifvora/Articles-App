@@ -3,7 +3,7 @@
 
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { StyleSheet, Text, View, TouchableWithoutFeedback, Alert, Image, AsyncStorage } from 'react-native';
+import { StyleSheet, Text, View, TouchableWithoutFeedback, Alert, Image, AsyncStorage, Platform } from 'react-native';
 import LocalStorageUtils from '../utils/LocalStorageUtils';
 
 class SideBar extends Component {
@@ -15,7 +15,7 @@ class SideBar extends Component {
         };
     }
 
-    async componentWillMount() {
+    async componentWillReceiveProps() {
         let userDetails = await AsyncStorage.getItem('userDetails');
         if (userDetails) {
             this.setState({ userDetails: JSON.parse(userDetails) })
@@ -52,10 +52,12 @@ class SideBar extends Component {
     }
 
     render() {
-        let full_name = 'Full name';
+        let { userDetails: { firstName, lastName } } = this.state;
+        let fullName = 'Full Name';
         if (this.state.userDetails) {
-            full_name = this.state.userDetails.firstName + " " + this.state.userDetails.lastName;
+            fullName = `${firstName ? firstName : ''} ${lastName ? lastName : ''}`;
         }
+
         return (
             <View style={Style.container}>
                 <View style={[Style.sideMenuHeaderBox, { flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }]}>
@@ -68,13 +70,13 @@ class SideBar extends Component {
                     </View>
                     <View style={{ alignItems: 'flex-start', justifyContent: 'center', flex: 2 }}>
                         <Text style={Style.sideMenuFullNameText}>
-                            {full_name}
+                            {fullName}
                         </Text>
                     </View>
                 </View>
                 <TouchableWithoutFeedback onPress={() => this.gotoPage('Home')}>
                     <View style={[Style.sideMenuBox, { flexDirection: 'row' }]}>
-                        <View style={{ justifyContent: 'center'}}>
+                        <View style={{ justifyContent: 'center' }}>
                             <Image
                                 style={Style.sideMenuImage}
                                 resizeMode='cover'
@@ -88,7 +90,7 @@ class SideBar extends Component {
                 </TouchableWithoutFeedback>
                 <TouchableWithoutFeedback onPress={() => this.logoutConfirmation()}>
                     <View style={[Style.sideMenuBox, { flexDirection: 'row' }]}>
-                        <View style={{ justifyContent: 'center'}}>
+                        <View style={{ justifyContent: 'center' }}>
                             <Image
                                 style={Style.sideMenuImage}
                                 resizeMode='cover'
@@ -131,12 +133,13 @@ const Style = StyleSheet.create({
         marginLeft: 10
     },
     sideMenuHeaderBox: {
+        paddingTop: Platform.OS === 'ios' ? 20 : 0,
         padding: 5,
         width: '100%',
         backgroundColor: '#3543ad',
         borderBottomWidth: 1,
         borderColor: '#fff',
-        height: 75,
+        height: Platform.OS === 'ios' ? 90 : 75,
     },
     sideMenuProfileImage: {
         width: 55,
