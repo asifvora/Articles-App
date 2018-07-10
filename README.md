@@ -4,10 +4,14 @@ React native demo Articles-App.
 
 # Screenshot
 
-| SingUp Screen | SingIn Screen | Home Screen | Details Screen | Navigation Screen |
-| ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
-| <img src="./img/SingUp.png" height="400" alt="Screenshot"/>  | <img src="./img/SingIn.png" height="400" alt="Screenshot"/>  | <img src="./img/Home.png" height="400" alt="Screenshot"/>  | <img src="./img/Details.png" height="400" alt="Screenshot"/>  | <img src="./img/Navigation.png" height="400" alt="Screenshot"/>  |
+| SingUp Screen | SingIn Screen | Home Screen | 
+| ------------------ | ------------------ | ------------------ | 
+| <img src="./img/SingUp.png" height="400" alt="Screenshot"/>  | <img src="./img/SingIn.png" height="400" alt="Screenshot"/>  | <img src="./img/Home.png" height="400" alt="Screenshot"/> |
 
+| Details Screen | Navigation Screen |
+| ------------------ | ------------------ |
+ | <img src="./img/Details.png" height="400" alt="Screenshot"/>  | <img src="./img/Navigation.png" height="400" alt="Screenshot"/>  |
+ 
 ## Getting Started
 
 For help getting started with React-native, view online
