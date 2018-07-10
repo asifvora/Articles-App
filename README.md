@@ -42,6 +42,11 @@ $ npm install
 $ react-native run-android
 $ react-native run-ios
 ```
+#### 5. Link the library
+
+```sh
+$ react-native link
+```
 
 ## Questions?🤔 
   
