@@ -22,10 +22,6 @@ class Header extends Component {
         }
     }
 
-    componentWillReceiveProps(nextProps) {
-        console.log('searchArticlesData nextProps', nextProps)
-    }
-
     render() {
         return (
             <View style={styles.container}>

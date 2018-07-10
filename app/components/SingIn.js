@@ -63,24 +63,16 @@ class SingIn extends Component {
         const { navigate } = this.props.navigation
         var value = this.refs.form.getValue();
         if (value) {
-            console.log('value', value)
             let email = value.email;
             let password = value.password;
-            console.log('email', email)
-            console.log('password', password)
             let userDetails = await AsyncStorage.getItem('userDetails');
             userDetails = JSON.parse(userDetails);
             userDeta = userDetails;
-            console.log('userDeta', userDeta)
-            console.log('userDetails Parse', userDetails)
             let userEmail = userDetails.email;
             let userPassword = userDetails.password;
-            console.log('userEmail', userEmail)
-            console.log('userPassword', userPassword)
             if (email === userEmail && password === userPassword) {
                 let token = TokenGenerate.encode(email);
                 LocalStorageUtils.set('userToken', token);
-                console.log('token', token)
                 alert('Successfully login.');
                 Keyboard.dismiss();
                 navigate('Home');

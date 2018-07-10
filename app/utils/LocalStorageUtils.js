@@ -35,7 +35,6 @@ export default {
   },
 
   clear: (key) => {
-    console.log('key',key)
     return AsyncStorage.removeItem(key);
 
   }

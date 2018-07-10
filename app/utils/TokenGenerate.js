@@ -6,14 +6,12 @@ export default {
     encode(string) {
         // Encode the String
         let encodedString = Base64.encode(string);
-        console.log('encodedString',encodedString);
         return encodedString;
     },
 
     decode(encodedString) {
         // Decode the String
         let decodedString = Base64.decode(encodedString);
-        console.log('decodedString',decodedString);
         return decodedString;
     }
 

@@ -19,7 +19,6 @@ class About extends Component {
   };
 
   async componentWillMount() {
-    console.log('componentWillMount About page')
     const { navigate } = this.props.navigation
     let userToken = await AsyncStorage.getItem('userToken');
     if (!userToken) {

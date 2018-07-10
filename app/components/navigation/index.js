@@ -8,6 +8,7 @@ import Toast from 'react-native-simple-toast';
 import { BackHandler } from "react-native";
 
 class AppNavigation extends Component {
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -20,8 +21,6 @@ class AppNavigation extends Component {
             const { dispatch, navigation, navigationState } = this.props;
             let current_index_id = navigationState.routes["0"].routes["0"].index;
             let currentRouteName = navigationState.routes["0"].routes["0"].routes[current_index_id].routeName;
-            console.log('current_index_id', current_index_id)
-            console.log('currentRouteName', currentRouteName)
             //below commented line is original line from template
             //if (navigationState.routes.length === 1 && (navigationState.routes[0].routeName === 'Login' || navigationState.routes[0].routeName === 'Start')) {
             if (currentRouteName === 'SingIn' || currentRouteName === 'Home') {
@@ -52,7 +51,6 @@ class AppNavigation extends Component {
     render() {
         const { navigationState, dispatch } = this.props;
         const navigation = addNavigationHelpers({ dispatch, state: navigationState, addListener: () => { } })
-        console.log('navigation', navigation)
         return (
             <NavigationStack navigation={navigation} />
         );

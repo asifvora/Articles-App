@@ -44,7 +44,6 @@ function fetchArticlesFailure(err) {
 export function fetchMoreArticles() {
     return (dispatch, getState) => {
         const { articlesReducer } = getState();
-        console.log('articlesReducer', articlesReducer.data.data)
         fetch(baseURL)
             .then(response => response.json())
             .then(json => dispatch(fetchMoreArticlesSuccess(articlesReducer.data.data, json)))
@@ -89,7 +88,6 @@ export function filterSearchData(text) {
                 return data.title.startsWith(text);
             });
         }
-        console.log('filterData', filterData.length)
         if (filterData.length !== 0) {
             dispatch(filterSearchDataSuccess(filterData));
         } else {
